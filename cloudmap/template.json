@@ -1,5 +1,5 @@
 {
-    "ServiceId": "srv-szvrlnjymuqg42lh",
+    "ServiceId": "dynamic-svc",
     "InstanceId": "dynamic-ip",
     "Attributes": {
         "AWS_INSTANCE_IPV4": "dynamic-ip",
