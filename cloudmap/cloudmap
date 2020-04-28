@@ -1,15 +1,14 @@
 #!/bin/bash
-
+  
 TOKEN=`curl -s  \169.\254.\169.\254/latest/meta-data/local-ipv4`
-
 case "$1" in
 start)
-   sed "s/dynamic-ip/$TOKEN/g" /opt/cloudmap/template.json >>/tmp/map.json
+   sed "s/dynamic-ip/$TOKEN/g; s/dynamic-svc/$2/g" /opt/cloudmap/template.json >/tmp/map.json
    aws servicediscovery register-instance --cli-input-json file:///tmp/map.json
    rm /tmp/map.json
    ;;
-stop) 
-   sed "s/dynamic-ip/$TOKEN/g" /opt/cloudmap/templated.json >>/tmp/unmap.json	
+stop)
+   sed "s/dynamic-ip/$TOKEN/g;s/dynamic-svc/$2/g" /opt/cloudmap/templated.json >/tmp/unmap.json
    aws servicediscovery deregister-instance --cli-input-json file:///tmp/unmap.json
    rm /tmp/unmap.json
    ;;
