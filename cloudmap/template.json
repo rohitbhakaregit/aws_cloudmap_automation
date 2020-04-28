@@ -2,7 +2,6 @@
     "ServiceId": "srv-szvrlnjymuqg42lh",
     "InstanceId": "dynamic-ip",
     "Attributes": {
-        "AWS_INIT_HEALTH_STATUS":"HEALTHY",
         "AWS_INSTANCE_IPV4": "dynamic-ip",
         "AWS_INSTANCE_PORT":"8080"
     }
